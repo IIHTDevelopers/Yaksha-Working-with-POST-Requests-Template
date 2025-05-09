@@ -28,50 +28,6 @@ public class ApiControllerTest {
 		testReport();
 	}
 
-	// @Test
-	// public void testSendPostRequest() throws Exception {
-	// 	// Prepare test data (JSON payload)
-	// 	String requestData = "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\"}";
-
-	// 	// Define the external URL for the POST request (e.g., jsonplaceholder API)
-	// 	String apiUrl = "https://jsonplaceholder.typicode.com/posts"; // The URL to send the POST request to
-
-	// 	// Declare boolean flags to track each assertion result
-	// 	boolean statusOk = false;
-	// 	boolean containsName = false;
-	// 	boolean containsEmail = false;
-
-	// 	try {
-	// 		// Perform the POST request with the test data to the external API via internal
-	// 		// controller
-	// 		MvcResult result = mockMvc.perform(post("/sendData") // This is your internal controller's endpoint
-	// 				.param("apiUrl", apiUrl) // Pass the external API URL as a parameter
-	// 				.contentType("application/json") // Set the content type as JSON
-	// 				.content(requestData)) // Provide the request data as the body
-	// 				.andExpect(status().isOk()) // Check if the status is OK (200)
-	// 				.andReturn(); // Capture the result
-
-	// 		// Check if the HTTP status is OK (200)
-	// 		statusOk = result.getResponse().getStatus() == 200;
-
-	// 		// Check if the response contains "name"
-	// 		containsName = result.getResponse().getContentAsString().contains("name");
-
-	// 		// Check if the response contains "email"
-	// 		containsEmail = result.getResponse().getContentAsString().contains("email");
-
-	// 	} catch (Exception ex) {
-	// 		// If any exception occurs, we log it and ensure `yakshaAssert` is called with
-	// 		// "false"
-	// 		System.out.println("Error occurred: " + ex.getMessage());
-	// 	}
-
-	// 	// Combine all the results and pass them to yakshaAssert
-	// 	boolean finalResult = statusOk && containsName && containsEmail;
-
-	// 	// Use yakshaAssert to check if all assertions passed
-	// 	yakshaAssert(currentTest(), finalResult ? "true" : "false", businessTestFile);
-	// }
 	@Test
 	public void testSendPostRequest() throws Exception {
 		String requestData = "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\"}";
@@ -113,7 +69,6 @@ public class ApiControllerTest {
 
 		yakshaAssert(currentTest(), finalResult ? "true" : "false", businessTestFile);
 	}
-
 
 	@Test
 	public void testControllerStructure() throws Exception {
